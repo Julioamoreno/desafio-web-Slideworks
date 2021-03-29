@@ -32,6 +32,12 @@ export default function App() {
 			if (response.ok) {
 				clearInput();
 				toast.success(`Board ${response.data.message.name} criado com sucesso`);
+				toast.success(
+					<a href={response.data.message.url} target='noreferrer'>
+						{' '}
+						LINK
+					</a>
+				);
 			} else {
 				toast.error('Ocorreu um erro');
 				if (response.status === 404) {

@@ -22,6 +22,7 @@ export default function App() {
 	const [tags, setTags] = useState('');
 
 	const createCard = async (e) => {
+		e.preventDefault();
 		try {
 			const response = await API.post('/board', {
 				name,
